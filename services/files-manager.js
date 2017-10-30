@@ -23,13 +23,10 @@ const path = require('path')
 /************************/
 
 exports.clearFolder = () => {
-
   const directory = path.join(__dirname, '../uploads/')
-  
   if (fs.existsSync(directory))
     fs.readdirSync(directory).forEach(file => {
       const currentPath = directory + '/' + file
       fs.unlinkSync(currentPath)
   })
-
 }
